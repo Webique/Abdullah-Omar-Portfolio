@@ -26,12 +26,12 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32">
+    <section className="relative overflow-hidden bg-gray-50 py-20 md:py-32">
       {/* Top Decorative Border */}
       <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="from-primary absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] via-transparent to-transparent"></div>
       </div>
 
@@ -55,10 +55,10 @@ const TestimonialsSection = () => {
               {t("badge")}
             </span>
           </m.div>
-          <h2 className="mb-4 text-4xl font-bold text-[#F5F5F5] md:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
             {t("title")}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-[#A0A0A0] md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg text-gray-600 md:text-xl">
             {t("subtitle")}
           </p>
         </m.div>
@@ -73,7 +73,7 @@ const TestimonialsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="border-primary/10 hover:border-primary/30 group relative overflow-hidden rounded-2xl border bg-[#1A1A1A] p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+              className="border-primary/20 hover:border-primary/40 group relative overflow-hidden rounded-2xl border bg-white p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
             >
               {/* Subtle Gold Glow on Hover */}
               <div className="bg-primary/5 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Testimonial Content */}
-                <p className="mb-6 leading-relaxed text-[#A0A0A0]">
+                <p className="mb-6 leading-relaxed text-gray-600">
                   &ldquo;
                   {
                     t(
@@ -107,8 +107,8 @@ const TestimonialsSection = () => {
                 </p>
 
                 {/* Author Info */}
-                <div className="border-primary/10 border-t pt-4">
-                  <div className="font-semibold text-[#F5F5F5]">
+                <div className="border-primary/20 border-t pt-4">
+                  <div className="font-semibold text-gray-900">
                     {
                       t(
                         `items.${testimonial.key}.name` as "items.testimonial1.name"

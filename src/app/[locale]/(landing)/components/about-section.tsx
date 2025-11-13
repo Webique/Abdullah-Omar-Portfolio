@@ -10,13 +10,13 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32"
+      className="relative overflow-hidden bg-gray-50 py-20 md:py-32"
     >
       {/* Top Decorative Border */}
       <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="from-primary absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] via-transparent to-transparent"></div>
       </div>
 
@@ -63,15 +63,15 @@ const AboutSection = () => {
               </span>
             </m.div>
 
-            <h2 className="text-4xl font-bold text-[#F5F5F5] md:text-5xl">
+            <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
               {t("title")}
             </h2>
 
-            <p className="text-lg leading-relaxed text-[#A0A0A0] md:text-xl">
+            <p className="text-lg leading-relaxed text-gray-600 md:text-xl">
               {t("description")}
             </p>
 
-            <blockquote className="border-primary relative border-s-4 bg-[#1A1A1A] py-6 ps-6 italic text-[#F5F5F5]">
+            <blockquote className="border-primary relative border-s-4 bg-white py-6 ps-6 italic text-gray-900 shadow-sm">
               <div className="text-primary absolute start-3 top-1 text-4xl opacity-50">
                 &ldquo;
               </div>

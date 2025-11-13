@@ -1,9 +1,11 @@
 "use client";
 
-import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
+import Instagram from "@/assets/icons/instagram.svg";
+import Whatsapp from "@/assets/icons/whatsapp.svg";
 import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {
@@ -17,7 +19,7 @@ const ContactSection = () => {
       href: `tel:${siteConfig.support.phone}`
     },
     {
-      icon: MessageCircle,
+      icon: Whatsapp,
       label: t("whatsapp"),
       value: siteConfig.support.whatsapp,
       href: siteConfig.links.whatsapp
@@ -30,7 +32,7 @@ const ContactSection = () => {
     },
     {
       icon: Instagram,
-      label: "Instagram",
+      label: t("instagram"),
       value: "@abdullah-omar",
       href: siteConfig.links.instagram
     }
@@ -39,13 +41,13 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32"
+      className="relative overflow-hidden bg-white py-20 md:py-32"
     >
       {/* Top Decorative Border */}
       <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="from-primary absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] via-transparent to-transparent"></div>
       </div>
 
@@ -69,10 +71,10 @@ const ContactSection = () => {
               {t("badge")}
             </span>
           </m.div>
-          <h2 className="mb-4 text-4xl font-bold text-[#F5F5F5] md:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
             {t("title")}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-[#A0A0A0] md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg text-gray-600 md:text-xl">
             {t("subtitle")}
           </p>
         </m.div>
@@ -92,7 +94,7 @@ const ContactSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="border-primary/10 hover:border-primary/30 group relative overflow-hidden rounded-2xl border bg-[#1A1A1A] p-6 transition-all duration-300 hover:bg-[#1A1A1A]/80 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+                className="border-primary/20 hover:border-primary/40 group relative overflow-hidden rounded-2xl border bg-gray-50 p-6 transition-all duration-300 hover:bg-white hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
               >
                 {/* Subtle Gold Glow on Hover */}
                 <div className="bg-primary/5 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
@@ -105,13 +107,13 @@ const ContactSection = () => {
                   </div>
 
                   {/* Label */}
-                  <h3 className="group-hover:text-primary mb-2 text-sm font-medium uppercase tracking-wider text-[#A0A0A0] transition-colors duration-300">
+                  <h3 className="group-hover:text-primary mb-2 text-sm font-medium uppercase tracking-wider text-gray-500 transition-colors duration-300">
                     {method.label}
                   </h3>
 
                   {/* Value */}
                   <p
-                    className="text-base font-semibold text-[#F5F5F5] transition-colors duration-300"
+                    className="text-base font-semibold text-gray-900 transition-colors duration-300"
                     dir="ltr"
                   >
                     {method.value}
@@ -136,7 +138,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-[#A0A0A0]">
+          <p className="text-lg text-gray-600">
             {t("cta")}{" "}
             <span className="text-primary font-semibold">{t("response")}</span>
           </p>
