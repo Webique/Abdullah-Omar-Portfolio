@@ -6,6 +6,8 @@ import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/plugins/counter.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
@@ -161,7 +163,7 @@ const PortfolioSection = () => {
           src: item.image,
           alt: `Portfolio ${item.id}`
         }))}
-        plugins={[Fullscreen, Zoom, Slideshow, Thumbnails]}
+        plugins={[Counter, Fullscreen, Zoom, Slideshow, Thumbnails]}
         zoom={{
           maxZoomPixelRatio: 3,
           scrollToZoom: true
@@ -178,6 +180,9 @@ const PortfolioSection = () => {
           borderRadius: 4,
           padding: 4,
           gap: 16
+        }}
+        counter={{
+          container: { style: { top: "16px", insetInlineStart: "16px" } }
         }}
         styles={{
           container: { backgroundColor: "rgba(0, 0, 0, 0.6)" }
