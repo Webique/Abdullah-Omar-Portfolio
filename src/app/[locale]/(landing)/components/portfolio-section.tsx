@@ -6,6 +6,11 @@ import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 const PortfolioSection = () => {
@@ -178,8 +183,26 @@ const PortfolioSection = () => {
           src: item.image,
           alt: `Portfolio ${item.id}`
         }))}
+        plugins={[Fullscreen, Zoom, Slideshow, Thumbnails]}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          scrollToZoom: true
+        }}
+        slideshow={{
+          autoplay: false,
+          delay: 3000
+        }}
+        thumbnails={{
+          position: "bottom",
+          width: 120,
+          height: 80,
+          border: 1,
+          borderRadius: 4,
+          padding: 4,
+          gap: 16
+        }}
         styles={{
-          container: { backgroundColor: "rgba(10, 10, 10, 0.95)" }
+          container: { backgroundColor: "rgba(0, 0, 0, 0.6)" }
         }}
       />
     </section>
