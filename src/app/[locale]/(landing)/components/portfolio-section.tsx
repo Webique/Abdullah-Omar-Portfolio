@@ -20,46 +20,24 @@ const PortfolioSection = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const portfolioItems = [
-    {
-      id: 1,
+    // Products (23 items)
+    ...Array.from({ length: 23 }, (_, i) => ({
+      id: i + 1,
       category: "products",
-      image: "/images/portfolio/products/1.jpg"
-    },
-    {
-      id: 2,
-      category: "products",
-      image: "/images/portfolio/products/2.jpg"
-    },
-    {
-      id: 3,
+      image: `/images/portfolio/products/${i + 1}.jpg`
+    })),
+    // Events (34 items)
+    ...Array.from({ length: 34 }, (_, i) => ({
+      id: i + 24,
       category: "events",
-      image: "/images/portfolio/events/1.jpg"
-    },
-    {
-      id: 4,
-      category: "events",
-      image: "/images/portfolio/events/2.jpg"
-    },
-    {
-      id: 5,
+      image: `/images/portfolio/events/${i + 1}.jpg`
+    })),
+    // Commercial (10 items)
+    ...Array.from({ length: 10 }, (_, i) => ({
+      id: i + 58,
       category: "commercial",
-      image: "/images/portfolio/commercial/2.png"
-    },
-    {
-      id: 6,
-      category: "products",
-      image: "/images/portfolio/products/3.jpg"
-    },
-    {
-      id: 7,
-      category: "events",
-      image: "/images/portfolio/events/3.jpg"
-    },
-    {
-      id: 8,
-      category: "events",
-      image: "/images/portfolio/events/4.jpg"
-    }
+      image: `/images/portfolio/commercial/${i + 1}.png`
+    }))
   ];
 
   const categories = ["all", "products", "events", "commercial"];
