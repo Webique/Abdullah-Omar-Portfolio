@@ -73,10 +73,11 @@ const Footer = () => {
             className="lg:col-span-5"
           >
             <Logo
-              imgClassName="invert brightness-0 saturate-0 w-30 lg:w-36"
+              src="/images/logos/2.jpeg"
+              imgClassName="w-36 lg:w-44"
               className="mb-6"
-              width={384}
-              height={295}
+              width={333}
+              height={197}
             />
             <p className="mb-8 max-w-md text-base leading-relaxed text-gray-300">
               {t("companyDescription")}
