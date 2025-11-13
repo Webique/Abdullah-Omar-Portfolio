@@ -47,11 +47,14 @@
       }
     },
     "Contact": {
-      "title": "Contact Us",
+      "title": "Contact Me",
       "subtitle": "Ready to turn your ideas into stunning visuals",
+      "badge": "Get In Touch",
       "phone": "Phone",
       "email": "Email",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+      "cta": "I respond to all inquiries within",
+      "response": "24 hours"
     },
     "Process": {
       "title": "How We Work",
