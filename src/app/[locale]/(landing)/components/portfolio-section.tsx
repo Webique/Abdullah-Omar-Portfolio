@@ -23,42 +23,42 @@ const PortfolioSection = () => {
     {
       id: 1,
       category: "products",
-      image: "/images/صور منتجات/صور لايف ستايل/1.jpg"
+      image: "/images/portfolio/products/1.jpg"
     },
     {
       id: 2,
       category: "products",
-      image: "/images/صور منتجات/صور لايف ستايل/5.jpg"
+      image: "/images/portfolio/products/2.jpg"
     },
     {
       id: 3,
       category: "events",
-      image: "/images/صور عامه/تجمعات/2.jpg"
+      image: "/images/portfolio/events/1.jpg"
     },
     {
       id: 4,
       category: "events",
-      image: "/images/صور عامه/اعراس/LIFELENS (18).jpg"
+      image: "/images/portfolio/events/2.jpg"
     },
     {
       id: 5,
       category: "commercial",
-      image: "/images/صور ب تصاميم/1.png"
+      image: "/images/portfolio/commercial/2.png"
     },
     {
       id: 6,
       category: "products",
-      image: "/images/صور منتجات/صور لايف ستايل/c.jpg"
+      image: "/images/portfolio/products/3.jpg"
     },
     {
       id: 7,
       category: "events",
-      image: "/images/صور عامه/فندق/135A2297.jpg"
+      image: "/images/portfolio/events/3.jpg"
     },
     {
       id: 8,
       category: "events",
-      image: "/images/صور عامه/اعراس/LIFELENS (35).jpg"
+      image: "/images/portfolio/events/4.jpg"
     }
   ];
 
@@ -139,7 +139,7 @@ const PortfolioSection = () => {
           layout
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-          {filteredItems.map((item, index) => (
+          {filteredItems.slice(0, 8).map((item, index) => (
             <m.div
               key={item.id}
               layout
