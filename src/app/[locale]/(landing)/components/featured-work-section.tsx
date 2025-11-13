@@ -10,17 +10,17 @@ const FeaturedWorkSection = () => {
   const featuredWorks = [
     {
       id: 1,
-      image: "/images/صور عامه/اعراس/LIFELENS (39).jpg",
+      image: "/images/portfolio/events/25.jpg",
       category: "wedding"
     },
     {
       id: 2,
-      image: "/images/صور منتجات/صور لايف ستايل/8-2.jpg",
+      image: "/images/portfolio/products/7.jpg",
       category: "product"
     },
     {
       id: 3,
-      image: "/images/صور عامه/تجمعات/11.jpg",
+      image: "/images/portfolio/events/7.jpg",
       category: "event"
     }
   ];
@@ -79,11 +79,7 @@ const FeaturedWorkSection = () => {
               <div className="relative aspect-video overflow-hidden">
                 <ExportedImage
                   src={work.image}
-                  alt={
-                    t(
-                      `items.${work.category}.title` as "items.wedding.title"
-                    ) as string
-                  }
+                  alt={t(`items.${work.category}.title` as any)}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 1024px) 100vw, 90vw"

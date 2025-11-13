@@ -19,7 +19,7 @@ const CTASection = () => {
       <div className="absolute inset-0 z-0">
         <div className="relative h-full w-full">
           <ExportedImage
-            src="/images/صور عامه/استديو/صورة مايك.jpg"
+            src="/images/cta.jpg"
             alt="Call to Action"
             fill
             className="object-cover"

@@ -5,7 +5,7 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 import Instagram from "@/assets/icons/instagram.svg";
-import Whatsapp from "@/assets/icons/whatsapp.svg";
+import Whatsapp from "@/assets/icons/whatsapp-2.svg";
 import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {

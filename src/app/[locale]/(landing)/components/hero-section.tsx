@@ -1,24 +1,19 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
 import { Phone } from "lucide-react";
 import * as m from "motion/react-m";
 import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
-import Arrow from "@/assets/icons/arrow-1.svg";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  type CarouselApi
+  CarouselItem
 } from "@/components/ui/carousel";
 import { siteConfig } from "@/config/site";
 
 const HeroSection = () => {
-  const [api, setApi] = useState<CarouselApi>();
-
   const t = useTranslations("IndexPage.Hero");
 
   const slides = [
@@ -46,12 +41,12 @@ const HeroSection = () => {
       className="relative h-screen min-h-[600px] overflow-hidden"
     >
       <Carousel
-        setApi={setApi}
         className="h-full max-w-full overflow-hidden"
         plugins={[
-          Autoplay({
-            delay: 4000
-          })
+          // Autoplay({
+          //   delay: 4000
+          // }),
+          Fade()
         ]}
         opts={{
           align: "start",
@@ -134,45 +129,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Navigation Arrows */}
-        <div className="absolute bottom-10 start-6 z-30 flex w-fit gap-7">
-          <button
-            className="[&>svg]:fill-primary transition-opacity hover:opacity-80 disabled:[&>svg]:fill-zinc-300"
-            onClick={() => api?.scrollPrev()}
-            aria-label="Previous slide"
-          >
-            <Arrow className="h-6 w-6 ltr:rotate-180" />
-          </button>
-          <button
-            className="[&>svg]:fill-primary transition-opacity hover:opacity-80 disabled:[&>svg]:fill-zinc-300"
-            onClick={() => api?.scrollNext()}
-            aria-label="Next slide"
-          >
-            <Arrow className="h-6 w-6 rtl:rotate-180" />
-          </button>
-        </div>
       </Carousel>
-
-      {/* Scroll Indicator */}
-      <m.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2"
-      >
-        <m.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="border-primary/50 h-12 w-8 rounded-full border-2"
-        >
-          <m.div
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="bg-primary mx-auto mt-2 h-2 w-2 rounded-full"
-          ></m.div>
-        </m.div>
-      </m.div>
     </section>
   );
 };

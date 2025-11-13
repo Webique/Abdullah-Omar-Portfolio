@@ -32,7 +32,7 @@ const AboutSection = () => {
           >
             <div className="aspect-4/5 border-primary/20 relative overflow-hidden rounded-2xl border">
               <ExportedImage
-                src="/images/صور عامه/استديو/صورة استديديو دارك مود.jpg"
+                src="/images/about.jpg"
                 alt="Abdullah Omar"
                 fill
                 className="object-cover"
