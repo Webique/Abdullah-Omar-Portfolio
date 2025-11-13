@@ -110,8 +110,9 @@
     "CTA": {
       "title": "Ready to Start Your Project?",
       "subtitle": "Let's turn your ideas into visual content that makes an impact",
+      "badge": "Let's Work Together",
       "primaryButton": "Book Your Session Now",
-      "secondaryButton": "View Our Work"
+      "secondaryButton": "View My Work"
     },
     "FeaturedWork": {
       "title": "Featured Work",

@@ -110,8 +110,9 @@
     "CTA": {
       "title": "جاهز لبدء مشروعك؟",
       "subtitle": "دعنا نحول أفكارك إلى محتوى بصري يترك أثراً",
+      "badge": "لنعمل معاً",
       "primaryButton": "احجز جلستك الآن",
-      "secondaryButton": "شاهد أعمالنا"
+      "secondaryButton": "شاهد أعمالي"
     },
     "FeaturedWork": {
       "title": "أعمال مميزة",
