@@ -158,8 +158,10 @@
       "home": "Home",
       "about": "About",
       "services": "Services",
+      "myservices": "My Services",
       "portfolio": "Portfolio",
-      "contact": "Contact"
+      "contact": "Contact",
+      "contactme": "Contact Me"
     },
     "cta": "Book Now",
     "siteName": "Abdullah Omar",
@@ -168,6 +170,8 @@
   "Footer": {
     "home": "Home",
     "about": "About",
+    "myservices": "My Services",
+    "contactme": "Contact Me",
     "quickLinks": "Quick Links",
     "services": "Services",
     "portfolio": "Portfolio",

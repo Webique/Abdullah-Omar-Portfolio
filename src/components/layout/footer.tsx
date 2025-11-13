@@ -8,18 +8,16 @@ import Instagram from "@/assets/icons/instagram.svg";
 import TickTock from "@/assets/icons/tiktok.svg";
 import Logo from "@/components/ui/logo";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 const Footer = () => {
   const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: t("home"), href: "#home" },
+    { label: t("home"), href: "/" },
     { label: t("about"), href: "#about" },
-    { label: t("services"), href: "#services" },
-    { label: t("portfolio"), href: "#portfolio" },
-    { label: t("contactUs"), href: "#contact" }
+    { label: t("myservices"), href: "#services" },
+    { label: t("contactme"), href: "#contact" }
   ];
 
   const services = [
@@ -31,69 +29,88 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Instagram,
-      href: siteConfig.links.instagram,
+      href: `${siteConfig.links.instagram}`,
       label: "Instagram",
-      color: "hover:text-pink-500"
+      target: "_blank"
     },
     {
       icon: TickTock,
-      href: siteConfig.links.tiktok,
+      href: `${siteConfig.links.tiktok}`,
       label: "TikTok",
-      color: "hover:text-white"
+      target: "_blank"
+    },
+    {
+      icon: Mail,
+      href: `mailto:${siteConfig.support.email}`,
+      label: "Email",
+      target: "_blank"
+    },
+    {
+      icon: Phone,
+      href: `tel:${siteConfig.support.phone}`,
+      label: "WhatsApp",
+      target: "_blank"
     }
   ];
 
   return (
-    <footer className="bg-secondary relative">
+    <footer className="bg-secondary relative text-white">
       <div className="via-primary bg-linear-to-r h-1 w-full from-transparent to-transparent"></div>
 
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="from-primary absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] via-transparent to-transparent"></div>
       </div>
 
-      <div className="layout relative py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div className="container relative mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Company Info - Takes more space */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-4"
+            className="lg:col-span-5"
           >
             <Logo
-              src="/images/logos/2.jpeg"
+              imgClassName="invert brightness-0 saturate-0 w-30 lg:w-36"
               className="mb-6"
-              imgClassName="w-32 sm:w-36"
+              width={384}
+              height={295}
             />
-
-            <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+            <p className="mb-8 max-w-md text-base leading-relaxed text-gray-300">
               {t("companyDescription")}
             </p>
 
-            <div className="flex gap-3">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <m.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "border-border bg-card hover:border-primary group flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 hover:scale-110 hover:shadow-lg",
-                      social.color
-                    )}
-                    aria-label={social.label}
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Icon className="text-muted-foreground group-hover:text-primary h-5 w-5 transition-colors" />
-                  </m.a>
-                );
-              })}
+            {/* Social Links */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+                {t("connectWithUs")}
+              </h4>
+              <div className="flex gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <m.a
+                      key={social.label}
+                      href={social.href}
+                      target={social.target}
+                      rel="noopener noreferrer"
+                      className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white/10 transition-all hover:bg-white/20"
+                      aria-label={social.label}
+                      whileHover={{ y: -3 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Icon className="relative z-10 h-5 w-5 text-gray-300 transition-colors group-hover:text-white" />
+                      <div className="from-primary to-accent bg-linear-to-br absolute inset-0 opacity-0 transition-opacity group-hover:opacity-20" />
+                    </m.a>
+                  );
+                })}
+              </div>
             </div>
           </m.div>
 
+          {/* Quick Links */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +118,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h3 className="text-foreground mb-6 text-sm font-bold uppercase tracking-wider">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               {t("quickLinks")}
             </h3>
             <ul className="space-y-3">
@@ -109,11 +126,11 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary group inline-flex items-center text-sm transition-colors"
+                    className="group inline-flex items-center text-base text-gray-300 transition-colors hover:text-white"
                   >
                     <span className="relative">
                       {link.label}
-                      <span className="bg-primary absolute -bottom-0.5 left-0 h-px w-0 transition-all group-hover:w-full" />
+                      <span className="bg-primary absolute -bottom-1 start-0 h-px w-0 transition-all group-hover:w-full" />
                     </span>
                   </a>
                 </li>
@@ -121,14 +138,15 @@ const Footer = () => {
             </ul>
           </m.div>
 
+          {/* Services */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="lg:col-span-3"
+            className="lg:col-span-2"
           >
-            <h3 className="text-foreground mb-6 text-sm font-bold uppercase tracking-wider">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               {t("services")}
             </h3>
             <ul className="space-y-3">
@@ -136,11 +154,11 @@ const Footer = () => {
                 <li key={service.label}>
                   <a
                     href={service.href}
-                    className="text-muted-foreground hover:text-primary group inline-flex items-center text-sm transition-colors"
+                    className="group inline-flex items-center text-base text-gray-300 transition-colors hover:text-white"
                   >
                     <span className="relative">
                       {service.label}
-                      <span className="bg-primary absolute -bottom-0.5 left-0 h-px w-0 transition-all group-hover:w-full" />
+                      <span className="bg-primary absolute -bottom-1 start-0 h-px w-0 transition-all group-hover:w-full" />
                     </span>
                   </a>
                 </li>
@@ -148,6 +166,7 @@ const Footer = () => {
             </ul>
           </m.div>
 
+          {/* Contact Info */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,23 +174,21 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <h3 className="text-foreground mb-6 text-sm font-bold uppercase tracking-wider">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">
               {t("contactUs")}
             </h3>
             <div className="space-y-4">
               <a
                 href={`tel:${siteConfig.support.phone}`}
-                className="group flex items-center gap-3 transition-colors"
+                className="group flex items-start gap-3 transition-colors hover:text-white"
               >
-                <div className="bg-primary/10 group-hover:bg-primary/20 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors">
-                  <Phone className="text-primary h-4 w-4" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 transition-colors group-hover:bg-white/15">
+                  <Phone className="text-accent h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">
-                    {t("phone")}
-                  </div>
+                  <div className="text-xs text-gray-300">{t("phone")}</div>
                   <div
-                    className="text-foreground text-sm font-medium"
+                    className="text-sm text-white group-hover:text-white"
                     dir="ltr"
                   >
                     {siteConfig.support.phone}
@@ -181,54 +198,46 @@ const Footer = () => {
 
               <a
                 href={`mailto:${siteConfig.support.email}`}
-                className="group flex items-center gap-3 transition-colors"
+                className="group flex items-start gap-3 transition-colors hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="bg-primary/10 group-hover:bg-primary/20 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors">
-                  <Mail className="text-primary h-4 w-4" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 transition-colors group-hover:bg-white/15">
+                  <Mail className="text-accent h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">
-                    {t("email")}
-                  </div>
-                  <div className="text-foreground text-sm font-medium">
+                  <div className="text-xs text-gray-300">{t("email")}</div>
+                  <div className="text-sm text-white group-hover:text-white">
                     {siteConfig.support.email}
                   </div>
                 </div>
               </a>
 
-              <div className="flex items-center gap-3">
-                <div className="bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                  <MapPin className="text-primary h-4 w-4" />
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                  <MapPin className="text-accent h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-muted-foreground text-xs">
-                    {t("location")}
-                  </div>
-                  <div className="text-foreground text-sm font-medium">
-                    {t("saudiArabia")}
-                  </div>
+                  <div className="text-xs text-gray-300">{t("location")}</div>
+                  <div className="text-sm text-white">{t("saudiArabia")}</div>
                 </div>
               </div>
             </div>
           </m.div>
         </div>
 
+        {/* Bottom Bar */}
         <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="border-border mt-12 border-t pt-8"
+          className="mt-16 border-t border-white/20 pt-8"
         >
-          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-            <p className="text-muted-foreground text-sm">
+          <div className="text-center">
+            <p className="text-sm text-gray-300">
               {t("copyright", { year: currentYear })}
             </p>
-            <div className="text-muted-foreground flex items-center gap-2 text-sm">
-              <span>{t("available24_7")}</span>
-            </div>
           </div>
         </m.div>
       </div>

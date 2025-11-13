@@ -158,8 +158,10 @@
       "home": "الرئيسية",
       "about": "من أنا",
       "services": "الخدمات",
+      "myservices": "خدماتي",
       "portfolio": "الأعمال",
-      "contact": "تواصل"
+      "contact": "تواصل",
+      "contactme": "تواصل معي"
     },
     "cta": "احجز الآن",
     "siteName": "عبدالله عمر",
@@ -168,6 +170,8 @@
   "Footer": {
     "home": "الرئيسية",
     "about": "من أنا",
+    "myservices": "خدماتي",
+    "contactme": "تواصل معي",
     "quickLinks": "الروابط السريعة",
     "services": "الخدمات",
     "portfolio": "الأعمال",
