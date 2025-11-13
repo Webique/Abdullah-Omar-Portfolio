@@ -1,7 +1,8 @@
 "use client";
 
+import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
-import { Phone } from "lucide-react";
+import { Award, Camera, MessageCircle, Sparkles } from "lucide-react";
 import * as m from "motion/react-m";
 import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
@@ -17,22 +18,9 @@ const HeroSection = () => {
   const t = useTranslations("IndexPage.Hero");
 
   const slides = [
-    {
-      id: 1,
-      image: "/images/صور عامه/استديو/صورة استديديو دارك مود.jpg"
-    },
-    {
-      id: 2,
-      image: "/images/صور عامه/اعراس/LIFELENS (39).jpg"
-    },
-    {
-      id: 3,
-      image: "/images/صور منتجات/صور لايف ستايل/8-2.jpg"
-    },
-    {
-      id: 4,
-      image: "/images/صور عامه/تجمعات/11.jpg"
-    }
+    "/images/portfolio/events/1.jpg",
+    "/images/portfolio/events/34.jpg",
+    "/images/portfolio/products/11.jpg"
   ];
 
   return (
@@ -43,9 +31,9 @@ const HeroSection = () => {
       <Carousel
         className="h-full max-w-full overflow-hidden"
         plugins={[
-          // Autoplay({
-          //   delay: 4000
-          // }),
+          Autoplay({
+            delay: 4000
+          }),
           Fade()
         ]}
         opts={{
@@ -55,30 +43,18 @@ const HeroSection = () => {
         }}
       >
         <CarouselContent className="ms-0 h-screen min-h-[600px] gap-0">
-          {slides.map((slide) => (
-            <CarouselItem
-              key={slide.id}
-              className="h-screen min-h-[600px] ps-0"
-            >
+          {slides.map((image, index) => (
+            <CarouselItem key={index} className="h-screen min-h-[600px] ps-0">
               <div className="relative h-full w-full">
                 <ExportedImage
-                  src={slide.image}
+                  src={image}
                   alt="Abdullah Omar Photography"
                   fill
                   className="object-cover"
-                  priority={slide.id === 1}
+                  priority={index === 0}
                   sizes="100vw"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0
-                  }}
                 />
-
-                {/* Dark overlay */}
-                <div className="absolute inset-0 z-10 bg-black/60"></div>
+                <div className="absolute inset-0 z-10 bg-black/60" />
               </div>
             </CarouselItem>
           ))}
@@ -114,16 +90,39 @@ const HeroSection = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.6 }}
+                  className="flex flex-col items-center gap-10"
                 >
                   <a
-                    className="bg-primary text-primary-foreground hover:shadow-primary/30 flex items-center justify-center gap-3 rounded-full px-10 py-4 text-lg font-bold shadow-2xl transition-all duration-300 hover:scale-105"
+                    className="bg-primary text-primary-foreground hover:shadow-primary/30 flex items-center justify-center gap-3 rounded-full px-10 py-4 text-lg font-medium shadow-2xl transition-all duration-300 hover:scale-105"
                     href={siteConfig.links.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Phone className="h-6 w-6" />
-                    <span dir="ltr">{siteConfig.support.whatsapp}</span>
+                    <MessageCircle className="h-6 w-6" />
+                    <span>{t("whatsappButton")}</span>
                   </a>
+
+                  {/* Feature Badges */}
+                  <div className="flex flex-wrap justify-center gap-4 pt-2">
+                    <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <Camera className="text-primary h-4 w-4" />
+                      <span className="text-sm font-medium text-white">
+                        {t("badge1")}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <Award className="text-primary h-4 w-4" />
+                      <span className="text-sm font-medium text-white">
+                        {t("badge2")}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <Sparkles className="text-primary h-4 w-4" />
+                      <span className="text-sm font-medium text-white">
+                        {t("badge3")}
+                      </span>
+                    </div>
+                  </div>
                 </m.div>
               </div>
             </div>

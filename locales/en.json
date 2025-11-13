@@ -6,7 +6,11 @@
     "Hero": {
       "title": "Abdullah Omar",
       "subtitle": "Photographer & Creative Producer",
-      "cta": "Book Your Session"
+      "cta": "Book Your Session",
+      "whatsappButton": "Book via WhatsApp",
+      "badge1": "Professional Photography",
+      "badge2": "High Quality",
+      "badge3": "Creative Excellence"
     },
     "About": {
       "title": "About Me",
