@@ -80,7 +80,8 @@
     },
     "Testimonials": {
       "title": "Client Reviews",
-      "subtitle": "What our clients say about their experience with us",
+      "subtitle": "What my clients say about their experience with me",
+      "badge": "Testimonials",
       "items": {
         "testimonial1": {
           "content": "Amazing experience with Abdullah, the photography was very professional and the results exceeded expectations. I recommend everyone to work with him.",
