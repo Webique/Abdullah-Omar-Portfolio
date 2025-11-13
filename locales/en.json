@@ -1,0 +1,192 @@
+{
+  "IndexPage": {
+    "WhatsAppFloat": {
+      "tooltip": "Contact us via WhatsApp"
+    },
+    "Hero": {
+      "title": "Abdullah Omar",
+      "subtitle": "Photographer & Creative Producer",
+      "cta": "Book Your Session"
+    },
+    "About": {
+      "title": "About Me",
+      "description": "I'm Abdullah Omar - a photographer and creative producer passionate about capturing visuals that tell stories and reflect true identity.",
+      "quote": "Every shot I take is crafted with precision, emotion, and a clear artistic vision."
+    },
+    "Services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive professional photography services",
+      "items": {
+        "reels": {
+          "title": "Commercial Reels",
+          "description": "Professional videos for social media"
+        },
+        "products": {
+          "title": "Product Photography",
+          "description": "Decorative or white background"
+        },
+        "events": {
+          "title": "Event Coverage",
+          "description": "Conferences, exhibitions, weddings"
+        },
+        "portrait": {
+          "title": "Personal Portrait",
+          "description": "Portrait & lifestyle photography"
+        }
+      }
+    },
+    "Portfolio": {
+      "title": "Portfolio",
+      "subtitle": "Samples of our professional work",
+      "categories": {
+        "all": "All",
+        "products": "Products",
+        "events": "Events",
+        "portraits": "Portraits",
+        "commercial": "Commercial"
+      }
+    },
+    "Contact": {
+      "title": "Contact Us",
+      "subtitle": "Ready to turn your ideas into stunning visuals",
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "WhatsApp"
+    },
+    "Process": {
+      "title": "How We Work",
+      "subtitle": "Professional process from start to finish",
+      "steps": {
+        "consultation": {
+          "title": "Consultation",
+          "description": "We listen to your ideas and understand your vision"
+        },
+        "planning": {
+          "title": "Planning",
+          "description": "We create a comprehensive shooting plan"
+        },
+        "shooting": {
+          "title": "Shooting",
+          "description": "We capture moments with highest quality"
+        },
+        "delivery": {
+          "title": "Delivery",
+          "description": "We deliver polished and refined work"
+        }
+      }
+    },
+    "Testimonials": {
+      "title": "Client Reviews",
+      "subtitle": "What our clients say about their experience with us",
+      "items": {
+        "testimonial1": {
+          "content": "Amazing experience with Abdullah, the photography was very professional and the results exceeded expectations. I recommend everyone to work with him.",
+          "name": "Mohammed Al-Otaibi",
+          "role": "Business Owner"
+        },
+        "testimonial2": {
+          "content": "Professional and creative photographer, understands the vision quickly and executes it perfectly. Photo quality and production are excellent.",
+          "name": "Sarah Ahmed",
+          "role": "Marketing Manager"
+        },
+        "testimonial3": {
+          "content": "Our wedding photos were more than amazing, captured all the special moments in a beautiful artistic way. Thank you Abdullah!",
+          "name": "Khaled & Fatima",
+          "role": "Newlyweds"
+        }
+      }
+    },
+    "Stats": {
+      "items": {
+        "projects": "Completed Projects",
+        "clients": "Happy Clients",
+        "awards": "Awards & Recognition",
+        "satisfaction": "Client Satisfaction"
+      }
+    },
+    "CTA": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Let's turn your ideas into visual content that makes an impact",
+      "primaryButton": "Book Your Session Now",
+      "secondaryButton": "View Our Work"
+    },
+    "FeaturedWork": {
+      "title": "Featured Work",
+      "subtitle": "A curated selection of our best work",
+      "categories": {
+        "wedding": "Wedding Photography",
+        "product": "Product Photography",
+        "event": "Event Coverage"
+      }
+    }
+  },
+  "Error": {
+    "title": "Sorry, an unexpected error occurred!",
+    "description": "<p>We apologize for this error we encountered.</p><p>You can try <retry>reloading the page</retry> you were visiting.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Sorry, please check the address bar in your browser or use the navigation to go to a known page.",
+    "retryButton": "Try again",
+    "contactSupport": "Contact support",
+    "goBack": "Go back",
+    "backToHome": "Back to home"
+  },
+  "LocaleLayout": {
+    "name": "Abdullah Omar | Photographer & Creative Producer",
+    "short_name": "Abdullah Omar",
+    "description": "Abdullah Omar - Professional photographer and creative producer. We offer commercial reels, product photography, event coverage, and portrait photography services.",
+    "keywords": [
+      "Abdullah Omar",
+      "Photographer",
+      "Professional Photography",
+      "Product Photography",
+      "Commercial Photography",
+      "Event Photography",
+      "Portrait Photography",
+      "Reels",
+      "Visual Content",
+      "Saudi Photographer"
+    ]
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ar {🇸🇦 Arabic} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "cta": "Book Now",
+    "siteName": "Abdullah Omar",
+    "siteDescription": "Photographer & Creative Producer"
+  },
+  "Footer": {
+    "home": "Home",
+    "about": "About",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contactUs": "Contact",
+    "connectWithUs": "Connect With Us",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "copyright": "© {year} Abdullah Omar. All rights reserved",
+    "companyDescription": "Professional photographer and creative producer passionate about capturing visuals that tell stories and reflect true identity.",
+    "marketing": "Commercial Photography",
+    "development": "Product Photography",
+    "consulting": "Event Coverage",
+    "saudiArabia": "Kingdom of Saudi Arabia",
+    "available24_7": "Available 24/7",
+    "socialMedia": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "email": "Email"
+    }
+  }
+}
