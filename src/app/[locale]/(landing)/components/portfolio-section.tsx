@@ -1,13 +1,18 @@
 "use client";
 
+import { Expand } from "lucide-react";
 import * as m from "motion/react-m";
 import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const PortfolioSection = () => {
   const t = useTranslations("IndexPage.Portfolio");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const portfolioItems = [
     {
@@ -59,9 +64,26 @@ const PortfolioSection = () => {
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeCategory);
 
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
-    <section id="portfolio" className="py-20 md:py-32">
-      <div className="layout">
+    <section
+      id="portfolio"
+      className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32"
+    >
+      {/* Top Decorative Border */}
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
+
+      {/* Decorative Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="from-primary absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] via-transparent to-transparent"></div>
+      </div>
+
+      <div className="layout relative">
+        {/* Section Header */}
         <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,10 +91,21 @@ const PortfolioSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
+          <m.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="border-primary/20 bg-primary/10 mb-4 inline-block rounded-full border px-4 py-1.5"
+          >
+            <span className="text-primary text-sm font-medium">
+              {t("badge")}
+            </span>
+          </m.div>
+          <h2 className="mb-4 text-4xl font-bold text-[#F5F5F5] md:text-5xl">
             {t("title")}
           </h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg text-[#A0A0A0] md:text-xl">
             {t("subtitle")}
           </p>
         </m.div>
@@ -80,17 +113,19 @@ const PortfolioSection = () => {
         {/* Category Filter */}
         <div className="mb-12 flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
-            <button
+            <m.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`rounded-full px-6 py-2.5 font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "bg-card text-foreground hover:bg-primary/10"
+                  ? "bg-primary text-[#0A0A0A] shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                  : "border-primary/20 hover:border-primary/40 hover:bg-primary/10 border bg-[#1A1A1A] text-[#F5F5F5]"
               }`}
             >
-              {t(`categories.${category}` as any)}
-            </button>
+              {t(`categories.${category}` as "categories.all") as string}
+            </m.button>
           ))}
         </div>
 
@@ -108,7 +143,8 @@ const PortfolioSection = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ y: -8 }}
-              className="bg-card group relative aspect-square overflow-hidden rounded-xl shadow-lg"
+              className="border-primary/10 hover:border-primary/30 group relative aspect-square cursor-pointer overflow-hidden rounded-2xl border transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+              onClick={() => openLightbox(index)}
             >
               <ExportedImage
                 src={item.image}
@@ -117,12 +153,35 @@ const PortfolioSection = () => {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
+
               {/* Overlay */}
-              <div className="bg-linear-to-t absolute inset-0 from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="bg-linear-to-t absolute inset-0 from-[#0A0A0A]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+              {/* Expand Icon */}
+              <div className="bg-primary/20 absolute end-4 top-4 flex h-10 w-10 items-center justify-center rounded-full opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                <Expand className="text-primary h-5 w-5" />
+              </div>
             </m.div>
           ))}
         </m.div>
       </div>
+
+      {/* Bottom Decorative Border */}
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 bottom-0 h-1 w-full from-transparent to-transparent"></div>
+
+      {/* Lightbox */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        index={lightboxIndex}
+        slides={filteredItems.map((item) => ({
+          src: item.image,
+          alt: `Portfolio ${item.id}`
+        }))}
+        styles={{
+          container: { backgroundColor: "rgba(10, 10, 10, 0.95)" }
+        }}
+      />
     </section>
   );
 };

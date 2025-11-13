@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32">
       {/* Top Decorative Border */}
-      <div className="bg-linear-to-r via-primary absolute left-0 right-0 top-0 h-1 w-full from-transparent to-transparent"></div>
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
@@ -49,9 +49,9 @@ const TestimonialsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-4 inline-block rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-1.5"
+            className="border-primary/20 bg-primary/10 mb-4 inline-block rounded-full border px-4 py-1.5"
           >
-            <span className="text-sm font-medium text-[#D4AF37]">
+            <span className="text-primary text-sm font-medium">
               {t("badge")}
             </span>
           </m.div>
@@ -73,16 +73,16 @@ const TestimonialsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-2xl border border-[#D4AF37]/10 bg-[#1A1A1A] p-8 transition-all duration-300 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+              className="border-primary/10 hover:border-primary/30 group relative overflow-hidden rounded-2xl border bg-[#1A1A1A] p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
             >
               {/* Subtle Gold Glow on Hover */}
-              <div className="absolute inset-0 bg-[#D4AF37]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="bg-primary/5 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
               {/* Content */}
               <div className="relative">
                 {/* Quote Icon */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#D4AF37]/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#D4AF37]/20">
-                  <Quote className="h-7 w-7 text-[#D4AF37]" />
+                <div className="bg-primary/10 group-hover:bg-primary/20 mb-6 flex h-14 w-14 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110">
+                  <Quote className="text-primary h-7 w-7" />
                 </div>
 
                 {/* Rating */}
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]"
+                      className="fill-primary text-primary h-5 w-5"
                     />
                   ))}
                 </div>
@@ -107,7 +107,7 @@ const TestimonialsSection = () => {
                 </p>
 
                 {/* Author Info */}
-                <div className="border-t border-[#D4AF37]/10 pt-4">
+                <div className="border-primary/10 border-t pt-4">
                   <div className="font-semibold text-[#F5F5F5]">
                     {
                       t(
@@ -115,7 +115,7 @@ const TestimonialsSection = () => {
                       ) as string
                     }
                   </div>
-                  <div className="text-sm text-[#D4AF37]">
+                  <div className="text-primary text-sm">
                     {
                       t(
                         `items.${testimonial.key}.role` as "items.testimonial1.role"
@@ -126,14 +126,14 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Corner Accent */}
-              <div className="absolute right-0 top-0 h-20 w-20 -translate-y-10 translate-x-10 rounded-full bg-[#D4AF37]/5 blur-2xl transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5 group-hover:bg-[#D4AF37]/10"></div>
+              <div className="bg-primary/5 group-hover:bg-primary/10 absolute end-0 top-0 h-20 w-20 -translate-y-10 translate-x-10 rounded-full blur-2xl transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5"></div>
             </m.div>
           ))}
         </div>
       </div>
 
       {/* Bottom Decorative Border */}
-      <div className="bg-linear-to-r via-primary absolute bottom-0 left-0 right-0 h-1 w-full from-transparent to-transparent"></div>
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 bottom-0 h-1 w-full from-transparent to-transparent"></div>
     </section>
   );
 };

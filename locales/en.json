@@ -14,8 +14,9 @@
       "quote": "Every shot I take is crafted with precision, emotion, and a clear artistic vision."
     },
     "Services": {
-      "title": "Our Services",
+      "title": "My Services",
       "subtitle": "Comprehensive professional photography services",
+      "badge": "What I Offer",
       "items": {
         "reels": {
           "title": "Commercial Reels",
@@ -37,7 +38,8 @@
     },
     "Portfolio": {
       "title": "Portfolio",
-      "subtitle": "Samples of our professional work",
+      "subtitle": "Samples of my professional work",
+      "badge": "My Work",
       "categories": {
         "all": "All",
         "products": "Products",
@@ -57,8 +59,9 @@
       "response": "24 hours"
     },
     "Process": {
-      "title": "How We Work",
+      "title": "How I Work",
       "subtitle": "Professional process from start to finish",
+      "badge": "My Process",
       "steps": {
         "consultation": {
           "title": "Consultation",
@@ -101,6 +104,7 @@
       }
     },
     "Stats": {
+      "badge": "By The Numbers",
       "items": {
         "projects": "Completed Projects",
         "clients": "Happy Clients",
@@ -117,11 +121,23 @@
     },
     "FeaturedWork": {
       "title": "Featured Work",
-      "subtitle": "A curated selection of our best work",
+      "subtitle": "A curated selection of my best work",
+      "badge": "Portfolio Highlights",
       "categories": {
         "wedding": "Wedding Photography",
         "product": "Product Photography",
         "event": "Event Coverage"
+      },
+      "items": {
+        "wedding": {
+          "title": "Wedding Photography"
+        },
+        "product": {
+          "title": "Product Lifestyle"
+        },
+        "event": {
+          "title": "Corporate Event"
+        }
       }
     }
   },

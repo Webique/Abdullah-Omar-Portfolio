@@ -42,7 +42,7 @@ const ContactSection = () => {
       className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32"
     >
       {/* Top Decorative Border */}
-      <div className="bg-linear-to-r via-primary absolute left-0 right-0 top-0 h-1 w-full from-transparent to-transparent"></div>
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
@@ -63,9 +63,9 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-4 inline-block rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-1.5"
+            className="border-primary/20 bg-primary/10 mb-4 inline-block rounded-full border px-4 py-1.5"
           >
-            <span className="text-sm font-medium text-[#D4AF37]">
+            <span className="text-primary text-sm font-medium">
               {t("badge")}
             </span>
           </m.div>
@@ -92,20 +92,20 @@ const ContactSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group relative overflow-hidden rounded-2xl border border-[#D4AF37]/10 bg-[#1A1A1A] p-6 transition-all duration-300 hover:border-[#D4AF37]/30 hover:bg-[#1A1A1A]/80 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+                className="border-primary/10 hover:border-primary/30 group relative overflow-hidden rounded-2xl border bg-[#1A1A1A] p-6 transition-all duration-300 hover:bg-[#1A1A1A]/80 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
               >
                 {/* Subtle Gold Glow on Hover */}
-                <div className="absolute inset-0 bg-[#D4AF37]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="bg-primary/5 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
                 {/* Content */}
                 <div className="relative flex flex-col items-center text-center">
                   {/* Icon Container */}
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#D4AF37]/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#D4AF37]/20">
-                    <Icon className="h-7 w-7 text-[#D4AF37] transition-transform duration-300 group-hover:scale-110" />
+                  <div className="bg-primary/10 group-hover:bg-primary/20 mb-4 flex h-16 w-16 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110">
+                    <Icon className="text-primary h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
                   </div>
 
                   {/* Label */}
-                  <h3 className="mb-2 text-sm font-medium uppercase tracking-wider text-[#A0A0A0] transition-colors duration-300 group-hover:text-[#D4AF37]">
+                  <h3 className="group-hover:text-primary mb-2 text-sm font-medium uppercase tracking-wider text-[#A0A0A0] transition-colors duration-300">
                     {method.label}
                   </h3>
 
@@ -118,11 +118,11 @@ const ContactSection = () => {
                   </p>
 
                   {/* Hover Indicator */}
-                  <div className="bg-linear-to-r mt-4 h-0.5 w-0 from-transparent via-[#D4AF37] to-transparent transition-all duration-300 group-hover:w-full"></div>
+                  <div className="bg-linear-to-r via-primary mt-4 h-0.5 w-0 from-transparent to-transparent transition-all duration-300 group-hover:w-full"></div>
                 </div>
 
                 {/* Corner Accent */}
-                <div className="absolute right-0 top-0 h-20 w-20 -translate-y-10 translate-x-10 rounded-full bg-[#D4AF37]/5 blur-2xl transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5 group-hover:bg-[#D4AF37]/10"></div>
+                <div className="bg-primary/5 group-hover:bg-primary/10 absolute end-0 top-0 h-20 w-20 -translate-y-10 translate-x-10 rounded-full blur-2xl transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5"></div>
               </m.a>
             );
           })}
@@ -138,9 +138,7 @@ const ContactSection = () => {
         >
           <p className="text-lg text-[#A0A0A0]">
             {t("cta")}{" "}
-            <span className="font-semibold text-[#D4AF37]">
-              {t("response")}
-            </span>
+            <span className="text-primary font-semibold">{t("response")}</span>
           </p>
         </m.div>
       </div>

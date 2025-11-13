@@ -13,7 +13,7 @@ const CTASection = () => {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32">
       {/* Top Decorative Border */}
-      <div className="bg-linear-to-r via-primary absolute left-0 right-0 top-0 h-1 w-full from-transparent to-transparent"></div>
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 top-0 h-1 w-full from-transparent to-transparent"></div>
 
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -50,9 +50,9 @@ const CTASection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-block rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-1.5"
+            className="border-primary/20 bg-primary/10 mb-6 inline-block rounded-full border px-4 py-1.5"
           >
-            <span className="text-sm font-medium text-[#D4AF37]">
+            <span className="text-primary text-sm font-medium">
               {t("badge")}
             </span>
           </m.div>
@@ -71,7 +71,7 @@ const CTASection = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center gap-3 rounded-full bg-[#D4AF37] px-8 py-4 text-lg font-semibold text-[#0A0A0A] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-300 hover:bg-[#E5C158] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)]"
+              className="bg-primary group inline-flex items-center gap-3 rounded-full px-8 py-4 text-lg font-semibold text-[#0A0A0A] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-300 hover:bg-[#E5C158] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)]"
             >
               <MessageCircle className="h-6 w-6" />
               {t("primaryButton")}
@@ -82,7 +82,7 @@ const CTASection = () => {
               href="#portfolio"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center gap-3 rounded-full border-2 border-[#D4AF37] bg-transparent px-8 py-4 text-lg font-semibold text-[#F5F5F5] transition-all duration-300 hover:bg-[#D4AF37]/10"
+              className="border-primary hover:bg-primary/10 group inline-flex items-center gap-3 rounded-full border-2 bg-transparent px-8 py-4 text-lg font-semibold text-[#F5F5F5] transition-all duration-300"
             >
               {t("secondaryButton")}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 rtl:rotate-180" />
@@ -92,7 +92,7 @@ const CTASection = () => {
       </div>
 
       {/* Bottom Decorative Border */}
-      <div className="bg-linear-to-r via-primary absolute bottom-0 left-0 right-0 h-1 w-full from-transparent to-transparent"></div>
+      <div className="bg-linear-to-r via-primary absolute inset-x-0 bottom-0 h-1 w-full from-transparent to-transparent"></div>
     </section>
   );
 };
