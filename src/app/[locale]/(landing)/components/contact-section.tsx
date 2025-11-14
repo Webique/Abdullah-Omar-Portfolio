@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
@@ -15,6 +15,12 @@ const ContactSection = () => {
       label: t("phone"),
       value: "+965536416650",
       href: "tel:+965536416650"
+    },
+    {
+      icon: Mail,
+      label: t("email"),
+      value: "wf19020@gmail.com",
+      href: "mailto:wf19020@gmail.com"
     },
     {
       icon: Instagram,
@@ -66,7 +72,7 @@ const ContactSection = () => {
         </m.div>
 
         {/* Contact Cards Grid */}
-        <div className="mx-auto grid max-w-2xl gap-6 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             return (

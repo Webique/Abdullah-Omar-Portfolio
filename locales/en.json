@@ -144,6 +144,11 @@
           "title": "Corporate Event"
         }
       }
+    },
+    "Videos": {
+      "title": "Videos",
+      "subtitle": "Watch my latest video productions and creative work",
+      "badge": "Video Portfolio"
     }
   },
   "Error": {
@@ -186,6 +191,7 @@
       "services": "Services",
       "myservices": "My Services",
       "portfolio": "Portfolio",
+      "videos": "Videos",
       "contact": "Contact",
       "contactme": "Contact Me"
     },

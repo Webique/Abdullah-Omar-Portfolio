@@ -14,6 +14,7 @@ import PortfolioSection from "./components/portfolio-section";
 import ProcessSection from "./components/process-section";
 import ServicesSection from "./components/services-section";
 import TestimonialsSection from "./components/testimonials-section";
+import VideosSection from "./components/videos-section";
 
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   const { locale } = use(params);
@@ -30,6 +31,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
       <ProcessSection />
       <FeaturedWorkSection />
       <PortfolioSection />
+      <VideosSection />
       <TestimonialsSection />
       <CTASection />
       <ContactSection />
