@@ -10,7 +10,7 @@ const FeaturedWorkSection = () => {
   const featuredWorks = [
     {
       id: 1,
-      image: "/images/portfolio/events/25.jpg",
+      image: "/images/portfolio/events/b.webp",
       category: "wedding"
     },
     {
@@ -20,7 +20,7 @@ const FeaturedWorkSection = () => {
     },
     {
       id: 3,
-      image: "/images/portfolio/events/7.jpg",
+      image: "/images/portfolio/events/a.webp",
       category: "event"
     }
   ];

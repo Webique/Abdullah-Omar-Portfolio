@@ -20,7 +20,7 @@ const HeroSection = () => {
   const slides = [
     "/images/portfolio/events/1.jpg",
     "/images/portfolio/events/34.jpg",
-    "/images/portfolio/products/11.jpg"
+    "/images/portfolio/commercial/c.webp"
   ];
 
   return (

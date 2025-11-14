@@ -1,12 +1,10 @@
 "use client";
 
-import { Mail, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 import Instagram from "@/assets/icons/instagram.svg";
-import Whatsapp from "@/assets/icons/whatsapp-2.svg";
-import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {
   const t = useTranslations("IndexPage.Contact");
@@ -15,26 +13,14 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: t("phone"),
-      value: siteConfig.support.phone,
-      href: `tel:${siteConfig.support.phone}`
-    },
-    {
-      icon: Whatsapp,
-      label: t("whatsapp"),
-      value: siteConfig.support.whatsapp,
-      href: siteConfig.links.whatsapp
-    },
-    {
-      icon: Mail,
-      label: t("email"),
-      value: siteConfig.support.email,
-      href: `mailto:${siteConfig.support.email}`
+      value: "+965536416650",
+      href: "tel:+965536416650"
     },
     {
       icon: Instagram,
       label: t("instagram"),
-      value: "@abdullah-omar",
-      href: siteConfig.links.instagram
+      value: "xbdi.15",
+      href: "https://www.instagram.com/xbdi.15"
     }
   ];
 
@@ -80,7 +66,7 @@ const ContactSection = () => {
         </m.div>
 
         {/* Contact Cards Grid */}
-        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-2xl gap-6 sm:grid-cols-2">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             return (
