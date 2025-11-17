@@ -22,7 +22,7 @@ const ServicesSection = () => {
     },
     {
       icon: User,
-      key: "portrait"
+      key: "videos"
     }
   ];
 

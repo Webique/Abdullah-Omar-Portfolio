@@ -34,9 +34,9 @@
           "title": "Event Coverage",
           "description": "Conferences, exhibitions, weddings"
         },
-        "portrait": {
-          "title": "Personal Portrait",
-          "description": "Portrait & lifestyle photography"
+        "videos": {
+          "title": "Video Production",
+          "description": "Professional video content creation"
         }
       }
     },
