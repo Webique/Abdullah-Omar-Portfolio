@@ -86,16 +86,33 @@ const VideosSection = () => {
 
     // Handle fullscreen exit
     const handleFullscreenChange = () => {
-      if (!document.fullscreenElement && !(document as any).webkitFullscreenElement && !(document as any).mozFullScreenElement && !(document as any).msFullscreenElement) {
+      if (
+        !document.fullscreenElement &&
+        !(document as any).webkitFullscreenElement &&
+        !(document as any).mozFullScreenElement &&
+        !(document as any).msFullscreenElement
+      ) {
         setPlayingIndex(null);
         const videoToPause = videoRefs.current[index];
         if (videoToPause) {
           videoToPause.pause();
         }
-        document.removeEventListener("fullscreenchange", handleFullscreenChange);
-        document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
-        document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
-        document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
+        document.removeEventListener(
+          "fullscreenchange",
+          handleFullscreenChange
+        );
+        document.removeEventListener(
+          "webkitfullscreenchange",
+          handleFullscreenChange
+        );
+        document.removeEventListener(
+          "mozfullscreenchange",
+          handleFullscreenChange
+        );
+        document.removeEventListener(
+          "MSFullscreenChange",
+          handleFullscreenChange
+        );
       }
     };
 
@@ -159,10 +176,7 @@ const VideosSection = () => {
           >
             <CarouselContent>
               {videos.map((video, index) => (
-                <CarouselItem
-                  key={index}
-                  className="basis-full"
-                >
+                <CarouselItem key={index} className="basis-full">
                   <m.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -212,8 +226,8 @@ const VideosSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="!left-4 md:!-left-16 bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary h-10 w-10 border backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg" />
-            <CarouselNext className="!right-4 md:!-right-16 bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary h-10 w-10 border backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg" />
+            <CarouselPrevious className="bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary left-4 h-10 w-10 border shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 md:-left-16" />
+            <CarouselNext className="bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary right-4 h-10 w-10 border shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 md:-right-16" />
           </Carousel>
         </div>
       </div>
@@ -225,4 +239,3 @@ const VideosSection = () => {
 };
 
 export default VideosSection;
-
