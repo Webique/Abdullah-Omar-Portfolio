@@ -72,7 +72,8 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <m.div
+              <m.a
+                href={`#${service.key}`}
                 key={service.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +112,7 @@ const ServicesSection = () => {
 
                 {/* Corner Accent */}
                 <div className="bg-primary/5 group-hover:bg-primary/10 absolute end-0 top-0 h-20 w-20 -translate-y-10 translate-x-10 rounded-full blur-2xl transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5"></div>
-              </m.div>
+              </m.a>
             );
           })}
         </div>

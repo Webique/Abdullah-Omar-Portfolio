@@ -47,9 +47,20 @@
       "categories": {
         "all": "All",
         "products": "Products",
-        "events": "Events",
+        "events": "General Photos",
         "portraits": "Portraits",
-        "commercial": "Commercial"
+        "reels": "Commercial"
+      },
+      "subcategories": {
+        "all": "All",
+        "lifestyle": "Lifestyle Photos",
+        "white-bg": "White Background",
+        "flat-lay": "Flat Lay",
+        "studio": "Studio",
+        "weddings": "Weddings",
+        "gatherings": "Gatherings",
+        "hotel": "Hotel",
+        "hall": "Hall"
       }
     },
     "Contact": {

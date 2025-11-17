@@ -46,10 +46,21 @@
       "badge": "أعمالي",
       "categories": {
         "all": "الكل",
-        "products": "منتجات",
-        "events": "مناسبات",
+        "products": "صور منتجات",
+        "events": "صور عامة",
         "portraits": "بورتريه",
-        "commercial": "إعلانات"
+        "reels": "صور ب تصاميم"
+      },
+      "subcategories": {
+        "all": "الكل",
+        "lifestyle": "صور لايف ستايل",
+        "white-bg": "خلفية بيضاء",
+        "flat-lay": "لوح",
+        "studio": "استديو",
+        "weddings": "اعراس",
+        "gatherings": "تجمعات",
+        "hotel": "فندق",
+        "hall": "قاعه"
       }
     },
     "Contact": {

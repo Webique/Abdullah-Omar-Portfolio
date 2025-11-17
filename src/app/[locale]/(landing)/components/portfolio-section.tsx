@@ -4,7 +4,7 @@ import { Expand } from "lucide-react";
 import * as m from "motion/react-m";
 import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import "yet-another-react-lightbox/plugins/counter.css";
@@ -18,36 +18,115 @@ import "yet-another-react-lightbox/styles.css";
 const PortfolioSection = () => {
   const t = useTranslations("IndexPage.Portfolio");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeSubcategory, setActiveSubcategory] = useState("all");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      const categories = ["products", "events", "reels"];
+      if (hash && categories.includes(hash)) {
+        setActiveCategory(hash);
+      }
+    };
+
+    // Set initial category from hash
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   const portfolioItems = [
-    // Products (23 items)
-    ...Array.from({ length: 23 }, (_, i) => ({
+    // Products - Lifestyle (14 items)
+    ...Array.from({ length: 14 }, (_, i) => ({
       id: i + 1,
       category: "products",
-      image: `/images/portfolio/products/${i + 1}.jpg`
+      subcategory: "lifestyle",
+      image: `/images/portfolio/products/lifestyle/${i + 1}.jpg`
     })),
-    // Events (34 items)
-    ...Array.from({ length: 34 }, (_, i) => ({
+    // Products - White Background (11 items)
+    ...Array.from({ length: 11 }, (_, i) => ({
+      id: i + 9,
+      category: "products",
+      subcategory: "white-bg",
+      image: `/images/portfolio/products/white-bg/${i + 1}.jpg`
+    })),
+    // Products - Flat Lay (2 items)
+    ...Array.from({ length: 7 }, (_, i) => ({
+      id: i + 17,
+      category: "products",
+      subcategory: "flat-lay",
+      image: `/images/portfolio/products/flat-lay/${i + 1}.jpg`
+    })),
+    // Events - Studio (4 items)
+    ...Array.from({ length: 4 }, (_, i) => ({
       id: i + 24,
       category: "events",
-      image: `/images/portfolio/events/${i + 1}.jpg`
+      subcategory: "studio",
+      image: `/images/portfolio/events/studio/${i + 1}.jpg`
     })),
-    // Commercial (10 items)
+    // Events - Weddings (4 items)
+    ...Array.from({ length: 4 }, (_, i) => ({
+      id: i + 31,
+      category: "events",
+      subcategory: "weddings",
+      image: `/images/portfolio/events/weddings/${i + 1}.jpg`
+    })),
+    // Events - Gatherings (14 items)
+    ...Array.from({ length: 14 }, (_, i) => ({
+      id: i + 38,
+      category: "events",
+      subcategory: "gatherings",
+      image: `/images/portfolio/events/gatherings/${i + 1}.jpg`
+    })),
+    // Events - Hotel (6 items)
+    ...Array.from({ length: 6 }, (_, i) => ({
+      id: i + 45,
+      category: "events",
+      subcategory: "hotel",
+      image: `/images/portfolio/events/hotel/${i + 1}.jpg`
+    })),
+    // Events - Hall (6 items)
+    ...Array.from({ length: 6 }, (_, i) => ({
+      id: i + 52,
+      category: "events",
+      subcategory: "hall",
+      image: `/images/portfolio/events/hall/${i + 1}.jpg`
+    })),
+    // reels (10 items)
     ...Array.from({ length: 10 }, (_, i) => ({
       id: i + 58,
-      category: "commercial",
-      image: `/images/portfolio/commercial/${i + 1}.png`
+      category: "reels",
+      subcategory: "all",
+      image: `/images/portfolio/reels/${i + 1}.png`
     }))
   ];
 
-  const categories = ["all", "products", "events", "commercial"];
+  const categories = ["all", "products", "events", "reels"];
 
-  const filteredItems =
-    activeCategory === "all"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+  const subcategories: Record<string, string[]> = {
+    products: ["all", "lifestyle", "white-bg", "flat-lay"],
+    events: ["all", "studio", "weddings", "gatherings", "hotel", "hall"],
+    reels: []
+  };
+
+  const filteredItems = portfolioItems.filter((item) => {
+    if (activeCategory === "all") return true;
+    if (item.category !== activeCategory) return false;
+    if (activeSubcategory === "all") return true;
+    return item.subcategory === activeSubcategory;
+  });
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    setActiveSubcategory("all");
+  };
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -96,11 +175,12 @@ const PortfolioSection = () => {
         </m.div>
 
         {/* Category Filter */}
-        <div className="mb-12 flex flex-wrap justify-center gap-4">
+        <div className="mb-8 flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <m.button
+              id={category}
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`rounded-full px-6 py-2.5 font-medium transition-all duration-300 ${
@@ -113,6 +193,37 @@ const PortfolioSection = () => {
             </m.button>
           ))}
         </div>
+
+        {/* Subcategory Filter */}
+        {activeCategory !== "all" &&
+          subcategories[activeCategory]?.length > 0 && (
+            <m.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="-mt-4 mb-8 flex flex-wrap justify-center gap-3"
+            >
+              {subcategories[activeCategory].map((subcategory) => (
+                <m.button
+                  key={subcategory}
+                  onClick={() => setActiveSubcategory(subcategory)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                    activeSubcategory === subcategory
+                      ? "bg-primary/20 text-primary border-primary/40 border"
+                      : "border-primary/10 hover:border-primary/20 hover:bg-primary/5 border bg-[#1A1A1A]/50 text-[#D0D0D0]"
+                  }`}
+                >
+                  {
+                    t(
+                      `subcategories.${subcategory}` as "subcategories.all"
+                    ) as string
+                  }
+                </m.button>
+              ))}
+            </m.div>
+          )}
 
         {/* Portfolio Grid */}
         <m.div
