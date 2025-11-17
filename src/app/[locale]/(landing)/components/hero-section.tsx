@@ -18,9 +18,9 @@ const HeroSection = () => {
   const t = useTranslations("IndexPage.Hero");
 
   const slides = [
-    "/images/portfolio/events/1.jpg",
-    "/images/portfolio/events/34.jpg",
-    "/images/portfolio/commercial/c.webp"
+    "/images/featured-work/1.jpg",
+    "/images/featured-work/2.jpg",
+    "/images/featured-work/3.jpg"
   ];
 
   return (

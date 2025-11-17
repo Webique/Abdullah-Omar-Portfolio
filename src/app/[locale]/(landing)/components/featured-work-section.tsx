@@ -10,17 +10,17 @@ const FeaturedWorkSection = () => {
   const featuredWorks = [
     {
       id: 1,
-      image: "/images/portfolio/events/b.webp",
+      image: "/images/hero/1.jpg",
       category: "wedding"
     },
     {
       id: 2,
-      image: "/images/portfolio/products/7.jpg",
+      image: "/images/hero/2.jpg",
       category: "product"
     },
     {
       id: 3,
-      image: "/images/portfolio/events/a.webp",
+      image: "/images/hero/3.jpg",
       category: "event"
     }
   ];
