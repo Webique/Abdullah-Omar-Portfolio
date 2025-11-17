@@ -10,6 +10,7 @@ import ContactSection from "./components/contact-section";
 import CTASection from "./components/cta-section";
 import FeaturedWorkSection from "./components/featured-work-section";
 import HeroSection from "./components/hero-section";
+import PartnersSection from "./components/partners-section";
 import PortfolioSection from "./components/portfolio-section";
 import ProcessSection from "./components/process-section";
 import ServicesSection from "./components/services-section";
@@ -32,6 +33,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
       <FeaturedWorkSection />
       <PortfolioSection />
       <VideosSection />
+      <PartnersSection />
       <TestimonialsSection />
       <CTASection />
       <ContactSection />
