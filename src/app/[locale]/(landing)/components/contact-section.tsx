@@ -5,6 +5,7 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 import Instagram from "@/assets/icons/instagram.svg";
+import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {
   const t = useTranslations("IndexPage.Contact");
@@ -13,20 +14,20 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: t("phone"),
-      value: "+965536416650",
-      href: "tel:+965536416650"
+      value: siteConfig.support.phone,
+      href: `tel:${siteConfig.support.phone}`
     },
     {
       icon: Mail,
       label: t("email"),
-      value: "wf19020@gmail.com",
-      href: "mailto:wf19020@gmail.com"
+      value: siteConfig.support.email,
+      href: `mailto:${siteConfig.support.email}`
     },
     {
       icon: Instagram,
       label: t("instagram"),
       value: "xbdi.15",
-      href: "https://www.instagram.com/xbdi.15"
+      href: siteConfig.links.instagram
     }
   ];
 

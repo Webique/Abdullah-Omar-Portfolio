@@ -5,7 +5,6 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 import Instagram from "@/assets/icons/instagram.svg";
-import TickTock from "@/assets/icons/tiktok.svg";
 import Logo from "@/components/ui/logo";
 import { siteConfig } from "@/config/site";
 
@@ -31,12 +30,6 @@ const Footer = () => {
       icon: Instagram,
       href: `${siteConfig.links.instagram}`,
       label: "Instagram",
-      target: "_blank"
-    },
-    {
-      icon: TickTock,
-      href: `${siteConfig.links.tiktok}`,
-      label: "TikTok",
       target: "_blank"
     },
     {
