@@ -159,7 +159,22 @@
     "Videos": {
       "title": "Videos",
       "subtitle": "Watch my latest video productions and creative work",
-      "badge": "Video Portfolio"
+      "badge": "Video Portfolio",
+      "categories": {
+        "all": "All",
+        "ugc": "UGC",
+        "b-roll": "B-Roll",
+        "promo": "Promo"
+      },
+      "subcategories": {
+        "all": "All",
+        "classic-vid": "Classic Vid",
+        "high-production": "High Production UGC",
+        "ugc": "UGC",
+        "bank": "Al Ahli Bank",
+        "promo": "Promo",
+        "reel": "Reel"
+      }
     },
     "Partners": {
       "title": "Trusted Partners",

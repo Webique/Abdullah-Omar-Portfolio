@@ -159,7 +159,22 @@
     "Videos": {
       "title": "الفيديوهات",
       "subtitle": "شاهد أحدث إنتاجاتي الفيديوية وأعمالي الإبداعية",
-      "badge": "معرض الفيديوهات"
+      "badge": "معرض الفيديوهات",
+      "categories": {
+        "all": "الكل",
+        "ugc": "UGC",
+        "b-roll": "B-Roll",
+        "promo": "برومو"
+      },
+      "subcategories": {
+        "all": "الكل",
+        "classic-vid": "Classic Vid",
+        "high-production": "High Production UGC",
+        "ugc": "UGC",
+        "bank": "البنك الاهلي",
+        "promo": "برومو",
+        "reel": "ريل"
+      }
     },
     "Partners": {
       "title": "شركاء النجاح",
